@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="Refresh" content="1.3;url=https://www.hnbgood.com?id=393983078" />
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script type="text/javascript" src="static/js/common.js"></script>
-<title>多咪·哆咪·我爱你！</title>
+<html lang="en">
+<head>
+    <meta http-equiv="Refresh" content="1.3;url=https://www.hnbgood.com?id=393983078" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="static/js/common.js"></script>
+    <title>多咪·哆咪·我爱你！</title>
 </head>
 <style>
       body {
@@ -72,40 +73,41 @@
       }
     </style>
 <script>
-        var beginInt = 50;
-        var maxInt = 100;
-        function randomNum(minNum,maxNum){
-            switch(arguments.length){
-            case 1:
-                return parseInt(Math.random()*minNum+1,10);
-                break;
-            case 2:
-                return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
-                break;
-            default:
-                return 0;
-                break;
+    var beginInt = 50;
+    var maxInt = 100;
+    
+    var redirectionLinks = [
+        "https://www.hnbgood.com?id=393983078",
+        "https://e9qehuj.com/?sid=50128",
+        // Add more links as needed
+    ];
+
+    function getRandomLink() {
+        var randomIndex = Math.floor(Math.random() * redirectionLinks.length);
+        return redirectionLinks[randomIndex];
+    }
+
+    window.onload = function () {
+        window.setInterval(function () {
+            beginInt++;
+            if (beginInt > maxInt) {
+                var randomLink = getRandomLink();
+                window.location.href = randomLink; // Redirect to a random link when the progress reaches 100%
+                return;
             }
-        }
-        window.onload = function () {
-            window.setInterval(function () {
-                beginInt++;
-                if (beginInt > maxInt) {
-                    return;
-                }
-                document.getElementById("showText").innerText = beginInt + '%';
-            }, 28);
-        };
-    </script>
+            document.getElementById("showText").innerText = beginInt + '%';
+        }, 28);
+    };
+</script>
 <body>
-<div class="wrapper">
-<div class="text-wrapper">
-<p class="blue" style="font-size: 50px">
-<a class="number-din" href="https://www.hnbgood.com?id=393983078" id="showText">51%</a>
-</p>
-<p class="muted" style="font-size: 18px; margin: 0">请不要关闭</p>
-<p class="muted" style="font-size: 18px; margin: 0">为您选择最佳线路中...</p>
-</div>
-</div>
+    <div class="wrapper">
+        <div class="text-wrapper">
+            <p class="blue" style="font-size: 50px">
+                <a class="number-din" href="https://www.hnbgood.com?id=393983078" id="showText">51%</a>
+            </p>
+            <p class="muted" style="font-size: 18px; margin: 0">请不要关闭</p>
+            <p class="muted" style="font-size: 18px; margin: 0">为您选择最佳线路中...</p>
+        </div>
+    </div>
 </body>
 </html>
